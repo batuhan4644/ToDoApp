@@ -1,9 +1,7 @@
 package com.example.todoapp.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -14,9 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todoapp.R;
 import com.example.todoapp.databinding.CardTasarimBinding;
 import com.example.todoapp.entity.Isler;
-import com.example.todoapp.fragment.YapilacakIsDetayFragment;
-import com.example.todoapp.fragment.YapilacakIsKayitFragment;
-import com.example.todoapp.fragment.YapilacaklarFragment;
 import com.example.todoapp.fragment.YapilacaklarFragmentDirections;
 import com.example.todoapp.viewmodel.YapilacaklarFragmentViewModel;
 import com.google.android.material.snackbar.Snackbar;
@@ -66,7 +61,7 @@ public class IslerAdapter extends RecyclerView.Adapter<IslerAdapter.CardTasarimT
         t.imageViewSilResim.setOnClickListener(view -> {
             Snackbar.make(view,is.getYapilacak_is()+" silinsin mi?",Snackbar.LENGTH_LONG)
                     .setAction("Evet",v1 -> {
-                        viewModel.sil(is.getYapilicakis_id());
+                        viewModel.sil(is.getYapilacakis_id());
                     } ).show();
         });
     }

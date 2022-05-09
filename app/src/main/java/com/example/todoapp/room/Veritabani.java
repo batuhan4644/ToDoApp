@@ -17,8 +17,8 @@ public abstract class Veritabani extends RoomDatabase {
         if(INSTANCE == null){
             synchronized (Veritabani.class) {
                 INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                        Veritabani.class,"isler.sqlite")
-                        .createFromAsset("isler.sqlite")
+                        Veritabani.class, "islerim.sqlite")
+                        .createFromAsset("islerim.sqlite")
                         .build();
             }
         }

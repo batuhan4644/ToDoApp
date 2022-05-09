@@ -16,7 +16,7 @@ import io.reactivex.Single;
 @Dao
 public interface IslerDao {
     @Query("SELECT * FROM isler")
-    Single<List<Isler>> tumIsler();
+    Single<List<Isler>> tumisler();
 
     @Insert
     Completable isEkle(Isler is);

@@ -41,6 +41,7 @@ public class IslerDaoRepository {
 
                     @Override
                     public void onComplete() {
+
                         Log.e("Yapılacak İş Kayıt","Başarılı");
                     }
 
@@ -49,7 +50,7 @@ public class IslerDaoRepository {
                 });
     }
 
-    public void isGuncelle(int yapilacakis_id, String yapilacak_is){
+    public void isGuncelle(int yapilacakis_id,String yapilacak_is){
         Isler guncellenenIs = new Isler(yapilacakis_id,yapilacak_is);
         vt.islerDao().isGuncelle(guncellenenIs)
                 .subscribeOn(Schedulers.io())
@@ -60,7 +61,7 @@ public class IslerDaoRepository {
 
                     @Override
                     public void onComplete() {
-                        Log.e("Yapılacak İş Güncelleme","Başarılı");
+                       Log.e("Yapılacak İş Güncelleme","Başarılı");
                     }
 
                     @Override
@@ -99,12 +100,12 @@ public class IslerDaoRepository {
                 });
     }
 
-    public void tumIsleriAl(){
-        Disposable disposable = vt.islerDao().tumIsler()
-                .subscribeOn(Schedulers.io())
+    public void tumIsleriAl() {
+        Disposable disposable = vt.islerDao().tumisler()
+               .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(liste -> {
-                     islerListesi.setValue(liste);
+                 islerListesi.setValue(liste);
                 });
 
     }
